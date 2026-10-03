@@ -21,7 +21,7 @@
   --ink:#102d50; --text:#25313f; --muted:#5b6878; --line:#c8d2dd; --line2:#e3e9ef;
   --wash:#f3f6f9; --paper:#fff; --chap:#245b91;
   --si:#6835a0; --si-t:#f3edf9; --na:#bc4035; --na-t:#fcf0ee;
-  --beu:#006b78; --beu-t:#e6f3f4; --ro:#227344; --ro-t:#e9f4ec; --hw:#102d50; --hw-t:#e9eef5;
+  --beu:#006b78; --beu-t:#e6f3f4; --ro:#227344; --ro-t:#e9f4ec; --hw:#102d50; --hw-t:#e9eef5; --hs:#8a642f; --hs-t:#f5efe3; --hs-l:#e7dac6;
   --c:var(--ink); --ct:var(--wash);
   --serif:"Hahmlet","Noto Serif KR",serif;
   --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
@@ -51,7 +51,7 @@ button{font:inherit;color:inherit}
 .tile.on{background:var(--tc,var(--ink));color:#fff}
 .tile.on b{color:#fff}
 .tile[data-r=si]{--tc:var(--si)}.tile[data-r=na]{--tc:var(--na)}.tile[data-r=beu]{--tc:var(--beu)}
-.tile[data-r=ro]{--tc:var(--ro)}.tile[data-r=hw]{--tc:var(--hw)}
+.tile[data-r=ro]{--tc:var(--ro)}.tile[data-r=hw]{--tc:var(--hs)}
 .rail hr{width:2.6rem;border:0;border-top:1px solid var(--line2);margin:.3rem 0}
 .top{display:none}
 main{margin-left:var(--rail);min-height:100vh}
@@ -88,7 +88,7 @@ p{margin:0 0 1rem}
 .chips{display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;padding:0;margin:0}
 .chips li{font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:.1rem .6rem;background:#fff}
 .t-si{--c:var(--si);--ct:var(--si-t)}.t-na{--c:var(--na);--ct:var(--na-t)}.t-beu{--c:var(--beu);--ct:var(--beu-t)}
-.t-ro{--c:var(--ro);--ct:var(--ro-t)}.t-hw{--c:var(--hw);--ct:var(--hw-t)}
+.t-ro{--c:var(--ro);--ct:var(--ro-t)}.t-hw{--c:var(--hs);--ct:var(--hs-t)}
 
 /* ---------- room head ---------- */
 .rh{display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:start;padding-bottom:1.8rem;border-bottom:1px solid var(--line2)}
@@ -414,19 +414,19 @@ pre.json .k{color:#9cc7e6}pre.json .s{color:#f2c98b}pre.json .n{color:#b7e3b0}
 .ev li{display:grid;grid-template-columns:7.6rem 1fr auto;gap:1rem;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--line2)}
 .ev time{font:600 .9rem/1.4 var(--sans);color:var(--ink);font-variant-numeric:tabular-nums}
 .ev p{margin:0;font-size:.92rem}.ev p b{color:var(--ink)}
-.ev .st{font-size:.76rem;font-weight:600;border-radius:.25rem;padding:.05rem .45rem;white-space:nowrap;background:var(--hw-t);color:var(--ink)}
+.ev .st{font-size:.76rem;font-weight:600;border-radius:.25rem;padding:.05rem .45rem;white-space:nowrap;background:var(--ct);color:var(--c)}
 .ev .st.up{background:var(--na);color:#fff}
 @media (max-width:560px){.ev li{grid-template-columns:1fr auto}.ev time{grid-column:1/-1}}
 .rings{display:grid;grid-template-columns:minmax(14rem,22rem) 1fr;gap:2rem;align-items:center;margin-top:1rem}
 .rbox{position:relative;aspect-ratio:1}
 .rbox button{position:absolute;border-radius:50%;border:2px solid var(--line);background:rgba(255,255,255,.9);cursor:pointer;display:flex;justify-content:center;padding-top:.45rem;font-size:.78rem;font-weight:600;color:var(--muted);transition:all .2s}
 .rbox button:nth-child(1){inset:0}.rbox button:nth-child(2){inset:13%}.rbox button:nth-child(3){inset:26%}.rbox button:nth-child(4){inset:39%;align-items:center;padding:0}
-.rbox button.on{border-color:var(--ink);background:var(--hw-t);color:var(--ink)}
-.rbox button:nth-child(4).on{background:var(--ink);color:#fff}
+.rbox button.on{border-color:var(--c);background:var(--ct);color:var(--c)}
+.rbox button:nth-child(4).on{background:var(--c);color:#fff}
 .rpanel h3{margin:0 0 .2rem}
 .rpanel .who{color:var(--muted);font-size:.88rem;margin-bottom:.7rem}
 .rpanel .nums{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
-.rpanel .nums span{background:var(--ink);color:#fff;border-radius:.3rem;padding:.2rem .6rem;font-size:.84rem;font-weight:600}
+.rpanel .nums span{background:var(--c);color:#fff;border-radius:.3rem;padding:.2rem .6rem;font-size:.84rem;font-weight:600}
 @media (max-width:700px){.rings{grid-template-columns:1fr}.rbox{max-width:20rem;margin:0 auto;width:100%}}
 .cfg{display:grid;grid-template-columns:1fr 1.3fr;gap:1.2rem;margin-top:1rem;align-items:start}
 .cfg label{display:grid;gap:.2rem;font-size:.85rem;color:var(--muted);margin-bottom:.6rem}
@@ -542,6 +542,30 @@ h1,h2,h3,.bh,.bigq{text-wrap:balance}
 iframe.pf{width:100%;height:min(82vh,760px);border:0;border-radius:.45rem;display:block;background:#1B2A4A}
 video.mv{width:100%;border-radius:.45rem;background:#000;display:block;aspect-ratio:16/9}
 @media (max-width:640px){iframe.pf{height:78vh}}
+
+/* ---------- 확산 : report-style header & boxes ---------- */
+.rh2{display:grid;grid-template-columns:7.5rem 1fr;min-height:7.5rem;margin-bottom:.9rem}
+.rh2 .sq{background:var(--hs);color:#fff;display:grid;place-items:center;font:700 2.4rem/1 var(--sans);letter-spacing:-.02em}
+.rh2 .panel{background:var(--hs-t);padding:1.2rem 1.6rem;display:flex;flex-direction:column;justify-content:center;gap:.75rem}
+.rh2 h1{margin:0;font:700 clamp(1.25rem,2.5vw,1.7rem)/1.4 var(--sans);color:var(--hs);letter-spacing:-.01em}
+.rh2 .q{margin:0;color:#555;font-size:1.02rem;line-height:1.6}
+.rh2-meta{display:flex;flex-wrap:wrap;gap:.3rem 1.8rem;margin:0 0 2rem;font-size:.88rem;padding:0 .2rem}
+.rh2-meta div{display:flex;gap:.5rem}.rh2-meta dt{color:var(--muted)}.rh2-meta dd{margin:0;color:var(--hs);font-weight:600}
+.bx2{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin:1.2rem 0 1.4rem;align-items:stretch}
+.bx{border:3px solid var(--hs-l);background:#fff;min-width:0}
+.bx>h3{margin:0;background:var(--hs);color:#fff;text-align:center;font:500 1.2rem/1.4 var(--sans);padding:.6rem .8rem}
+.bx>ul{list-style:none;margin:0;padding:1.1rem 1.3rem .4rem}
+.bx>ul>li{margin:0 0 1.1rem}
+.bx>ul>li>b{display:block;font-weight:700;color:#1d1d1d;font-size:1.02rem}
+.bx>ul>li>b::before{content:"▶";margin-right:.55rem;font-size:.9em}
+.bx>ul>li>p{margin:.3rem 0 0 1.55rem;color:#4a4a4a;font-size:.95rem;line-height:1.7}
+.bx .st{display:inline-block;margin-left:.35rem;font-size:.74rem;font-weight:600;padding:.05rem .45rem;border-radius:.2rem;background:var(--hs-t);color:var(--hs);vertical-align:.12em}
+.bx .st.up{background:var(--hs);color:#fff}
+.bxb{padding:1rem 1.2rem 1.1rem}
+@media (max-width:760px){.bx2{grid-template-columns:1fr}.rh2{grid-template-columns:4.6rem 1fr;min-height:0}.rh2 .sq{font-size:1.45rem}.rh2 .panel{padding:1rem 1.1rem}}
+
+.t-hw .chain li{background:#faf6ef}
+.t-hw .chain li:last-child{background:var(--hs-t)}
 
 </style>
 </head>
@@ -966,17 +990,29 @@ video.mv{width:100%;border-radius:.45rem;background:#000;display:block;aspect-ra
 <!-- ===================== 확산 ===================== -->
 <section class="view t-hw" id="v-hw" data-title="확산 연구회로 로그인하다">
 <div class="wrap room">
-  <header class="rh"><div class="sq w" aria-hidden="true">확산</div><div>
-    <p class="lab">연구의 확산</p><h1>연구회로 로그인하다 — 동료와 함께</h1>
-    <p class="q">로그인은 두 방향으로. 학생은 세상으로, 교사는 동료에게.</p>
-    <dl><div><dt>넘는 장벽</dt><dd>한 교실에서 끝나지 않도록</dd></div><div><dt>기르는 역량</dt><dd>교원 전문성 · 지역 일반화</dd></div></dl>
+  <header class="rh2"><div class="sq" aria-hidden="true">확산</div><div class="panel">
+    <h1>연구의 확산 — 동료와 함께 <span>(연구회로 로그인하다)</span></h1>
+    <p class="q">핵심 질문 : 로그인은 두 방향으로 “학생은 세상으로, 교사는 동료에게”</p>
   </div></header>
+  <dl class="rh2-meta"><div><dt>넘는 장벽</dt><dd>한 교실에서 끝나지 않도록</dd></div><div><dt>기르는 역량</dt><dd>교원 전문성 · 지역 일반화</dd></div></dl>
+
+  <div class="bx2">
+    <section class="bx"><h3>서로 참관하다</h3><ul>
+      <li><b>사전 모임 · 2026. 5. 13.(수)</b><p>연구 방향과 수업안 초안을 함께 소개해 ME 프로젝트 4단계를 확정했다.</p></li>
+      <li><b>정기 협의회 · 월 1회 이상</b><p>대면과 온라인을 병행한다. 6. 17. 회원 교사가 직접 강사로 나선 연수에서 활동지·루브릭·프롬프트 카드를 소개</p></li>
+      <li><b>협력 연구회 3개 연대</b><p>지역 음악교육 연구회와 공개수업을 상호 참관</p></li>
+    </ul></section>
+    <section class="bx"><h3>공개하고, 피드백 받다</h3><ul>
+      <li><b>1차 도단위 공개수업 <span class="st">실시 완료</span></b><p>2026. 7. 10.(금) 「시나브로 × ME 프로젝트」— 개인 창작인 ME 프로젝트 전 과정을 공개했다. 참관 협의에서 나온 의견은 다음 차시 설계와 2학기 운영안에 곧바로 반영했다.</p></li>
+      <li><b>2차 도단위 공개수업 <span class="st up">실시 예정</span></b><p>2026. 11. 20.(금) 「ME에서 WE로: 나를 넘어 우리로」 — 모둠 창작인 WE 프로젝트가 주제이다. 예고 자료와 본시 교수·학습 과정안 작성 완료</p></li>
+    </ul></section>
+  </div>
 
   <h2 class="bh"><small>연구 일정</small>지금, 시나브로는 어디쯤인가</h2>
   <p class="lede">백워드 설계로 무엇을 확인할지 먼저 정한 다음 수업을 계획했습니다. 아래 막대의 빨간 표시는 이 페이지를 여는 오늘 날짜입니다.</p>
   <div class="tl" id="tl">
     <div class="today" id="today">오늘</div>
-    <div class="ph"><span style="flex:3;background:#9fb6d0"></span><span style="flex:3.5;background:#5b85b3"></span><span style="flex:4;background:#245b91"></span></div>
+    <div class="ph"><span style="flex:3;background:#dcc9a8"></span><span style="flex:3.5;background:#b38c55"></span><span style="flex:4;background:#8a642f"></span></div>
     <div class="phl"><span style="flex:3">① 준비 · 설계 (3.~5.)</span><span style="flex:3.5">② 1차 적용 · 검증 (5.~8.)</span><span style="flex:4">③ 2차 적용 · 확산 (9.~12.)</span></div>
   </div>
   <ul class="ev" id="ev">
@@ -1000,9 +1036,9 @@ video.mv{width:100%;border-radius:.45rem;background:#000;display:block;aspect-ra
     </div>
   </div>
 
-  <h2 class="bh"><small>공개하고, 피드백 받다</small>도단위 공개수업</h2>
+  <h2 class="bh"><small>도단위 공개수업</small>수업 영상과 현장</h2>
   <div class="two"><div><div class="vid"><button class="yt" type="button" data-id="wUJp9OxxG2c" data-title="도단위 공개수업 수업영상" style="background-image:url(https://i.ytimg.com/vi/wUJp9OxxG2c/hqdefault.jpg)" aria-label="도단위 공개수업 수업영상 재생"><span class="pl"></span><span class="tt">도단위 공개수업 수업영상</span></button></div><p class="note"><a href="https://youtu.be/wUJp9OxxG2c" target="_blank" rel="noopener">YouTube에서 열기</a></p></div>
-    <div><p>2026. 7. 10.(금) 「시나브로 × ME 프로젝트」에서 개인 창작인 ME 프로젝트 전 과정을 공개했습니다. 참관 협의에서 나온 의견은 다음 차시 설계와 2학기 운영안에 곧바로 반영했습니다.</p>
+    <div><p>2026. 7. 10.(금) 1차 도단위 공개수업 「시나브로 × ME 프로젝트」의 수업 영상입니다.</p>
       <p>배움과 실천과 공유가 하나의 순환을 이루도록, 연구 기간 중 AI·에듀테크 연수 6종에서 배운 내용을 곧바로 수업에 적용하고 그 결과를 연수와 연구회에서 사례로 나눴습니다.</p></div></div>
   <div class="strip"><figure><a class="zoom" href="img/main/r-003b.jpg"><img src="img/main/r-003b.jpg" width="850" height="637" loading="lazy" decoding="async" alt="단위학교 수업 실험"></a><a class="qrchip" href="https://dicle-music.com/index.html" target="_blank" rel="noopener">QR 연결 열기</a><figcaption>단위학교 수업 실험</figcaption></figure><figure><a class="zoom" href="img/main/r-003c.jpg"><img src="img/main/r-003c.jpg" width="850" height="637" loading="lazy" decoding="async" alt="지역단위 공개수업 참관"></a><figcaption>지역단위 공개수업 참관</figcaption></figure><figure><a class="zoom" href="img/main/r-003d.jpg"><img src="img/main/r-003d.jpg" width="850" height="637" loading="lazy" decoding="async" alt="연구회 사례발표"></a><figcaption>연구회 사례발표</figcaption></figure><figure><a class="zoom" href="img/main/r-003e.jpg"><img src="img/main/r-003e.jpg" width="850" height="637" loading="lazy" decoding="async" alt="도단위 공개수업(수업안내)"></a><figcaption>도단위 공개수업(수업안내)</figcaption></figure><figure><a class="zoom" href="img/main/r-003f.jpg"><img src="img/main/r-003f.jpg" width="1600" height="801" loading="lazy" decoding="async" alt="도단위 공개수업(과정시연)"></a><figcaption>도단위 공개수업(과정시연)</figcaption></figure><figure><a class="zoom" href="img/main/r-0040.jpg"><img src="img/main/r-0040.jpg" width="720" height="540" loading="lazy" decoding="async" alt="수업나눔 협의"></a><figcaption>수업나눔 협의</figcaption></figure><figure><a class="zoom" href="img/main/r-0042.jpg"><img src="img/main/r-0042.jpg" width="1600" height="901" loading="lazy" decoding="async" alt="AI · 디지털 역량체계 심화연수"></a><figcaption>AI · 디지털 역량체계 심화연수</figcaption></figure><figure><a class="zoom" href="img/main/r-0043.jpg"><img src="img/main/r-0043.jpg" width="1600" height="901" loading="lazy" decoding="async" alt="에듀테크 실증전문가 심화연수(KERIS)"></a><figcaption>에듀테크 실증전문가 심화연수(KERIS)</figcaption></figure><figure><a class="zoom" href="img/main/r-0044.jpg"><img src="img/main/r-0044.jpg" width="1600" height="901" loading="lazy" decoding="async" alt="AI 수업역량강화 심화연수(KERIS)"></a><figcaption>AI 수업역량강화 심화연수(KERIS)</figcaption></figure></div>
 
@@ -1015,11 +1051,11 @@ video.mv{width:100%;border-radius:.45rem;background:#000;display:block;aspect-ra
   </div>
 
   <h2 class="bh"><small>실제 수업에서 만난 문제</small>두 가지 문제와 해결방안</h2>
-  <div class="cases">
-    <article><h4>사례 1. 역할 편중</h4><ol class="chain"><li><b>문제 현상</b>기기를 잘 다루는 학생에게 작업이 몰린다.</li><li><b>원인</b>역할이 사전에 분담되지 않아 자연 발생적으로 편중되었다.</li><li><b>개선 방안</b>활동 시작 전 5개 역할 카드 배부, 기여도 반영</li></ol>
-      <ul class="chips"><li>01 대본</li><li>02 작사</li><li>03 작곡</li><li>04 편곡</li><li>05 발표리더</li></ul></article>
-    <article><h4>사례 2. 프롬프트 첫 결과 그대로 사용</h4><ol class="chain"><li><b>문제 현상</b>첫 생성물을 그대로 쓰는 학생이 있다.</li><li><b>원인</b>프롬프트 작성을 매번 백지에서 시작해 시간이 부족했다.</li><li><b>개선 방안</b>프롬프트 4단계 카드를 모둠 책상에 상시 비치</li></ol>
-      <ul class="chips"><li>STEP 1 맥락 설정</li><li>STEP 2 조건 명시</li><li>STEP 3 예시 제시</li><li>STEP 4 수정 지시</li></ul></article>
+  <div class="bx2">
+    <section class="bx"><h3>사례 1. 역할 편중</h3><div class="bxb"><ol class="chain"><li><b>문제 현상</b>기기를 잘 다루는 학생에게 작업이 몰린다.</li><li><b>원인</b>역할이 사전에 분담되지 않아 자연 발생적으로 편중되었다.</li><li><b>개선 방안</b>활동 시작 전 5개 역할 카드 배부, 기여도 반영</li></ol>
+      <ul class="chips"><li>01 대본</li><li>02 작사</li><li>03 작곡</li><li>04 편곡</li><li>05 발표리더</li></ul></div></section>
+    <section class="bx"><h3>사례 2. 프롬프트 첫 결과 그대로 사용</h3><div class="bxb"><ol class="chain"><li><b>문제 현상</b>첫 생성물을 그대로 쓰는 학생이 있다.</li><li><b>원인</b>프롬프트 작성을 매번 백지에서 시작해 시간이 부족했다.</li><li><b>개선 방안</b>프롬프트 4단계 카드를 모둠 책상에 상시 비치</li></ol>
+      <ul class="chips"><li>STEP 1 맥락 설정</li><li>STEP 2 조건 명시</li><li>STEP 3 예시 제시</li><li>STEP 4 수정 지시</li></ul></div></section>
   </div>
 
   <h2 class="bh"><small>개선을 위한 4가지 제언</small>누가, 무엇을 바꾸면 되는가</h2>
