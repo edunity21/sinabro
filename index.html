@@ -186,10 +186,10 @@ details.info dt{color:var(--c);font-weight:600}details.info dd{margin:0}
 .yt{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:.45rem;overflow:hidden;cursor:pointer;
   background:#0d1b2c center/cover no-repeat;padding:0}
 .yt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.7))}
-.yt .pl{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:4.2rem;height:4.2rem;border-radius:50%;background:rgba(255,255,255,.92);z-index:1;display:grid;place-items:center}
-.yt .pl::before{content:"";border-left:1.2rem solid var(--ink);border-top:.75rem solid transparent;border-bottom:.75rem solid transparent;margin-left:.3rem}
+.yt .pl,.ifr-lite .pl{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:4.2rem;height:4.2rem;border-radius:50%;background:rgba(255,255,255,.92);z-index:1;display:grid;place-items:center}
+.yt .pl::before,.ifr-lite .pl::before{content:"";border-left:1.2rem solid var(--ink);border-top:.75rem solid transparent;border-bottom:.75rem solid transparent;margin-left:.3rem}
 .yt .tt{position:absolute;left:1rem;right:1rem;bottom:.8rem;z-index:1;color:#fff;font-weight:600;text-align:left;font-size:.95rem}
-.yt:hover .pl{background:#fff}
+.yt:hover .pl,.ifr-lite:hover .pl{background:#fff}
 .ytf{width:100%;aspect-ratio:16/9;border:0;border-radius:.45rem;display:block}
 .vid{margin:1rem 0 .4rem}
 .vid+.note{margin-top:.2rem}
@@ -534,6 +534,15 @@ dialog.lb::backdrop{background:rgba(10,22,38,.92)}
 .two>*,.dgrid>*,.grow>*,.ab>*,.lyric>*,.cfg>*,.calp>*{min-width:0}
 h1,h2,h3,.bh,.bigq{text-wrap:balance}
 
+.player{margin:1rem 0 .4rem}
+.ifr-lite{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;border-bottom:3px solid #C9A542;border-radius:.45rem;overflow:hidden;cursor:pointer;
+  background:radial-gradient(circle at 70% 30%,#2b4170,#1B2A4A 60%,#0f1b31);padding:0;color:#fff}
+.ifr-lite .tt{position:absolute;left:1.2rem;right:1.2rem;bottom:1rem;text-align:left;font-size:.92rem;color:#e4e9f2}
+.ifr-lite .tt b{display:block;font:700 1.45rem/1.3 var(--serif);color:#fff;margin-bottom:.2rem}
+iframe.pf{width:100%;height:min(82vh,760px);border:0;border-radius:.45rem;display:block;background:#1B2A4A}
+video.mv{width:100%;border-radius:.45rem;background:#000;display:block;aspect-ratio:16/9}
+@media (max-width:640px){iframe.pf{height:78vh}}
+
 </style>
 </head>
 <body>
@@ -744,8 +753,17 @@ h1,h2,h3,.bh,.bigq{text-wrap:balance}
   <p class="prose" style="margin-top:1.4rem">이 경로 어디에도 악보를 읽거나 악기를 다루는 관문이 없습니다. 학생이 하는 일은 자기 이야기를 문장으로 쓰고, 그 문장이 어떤 소리가 되어야 하는지 정하고, 나온 결과를 듣고 고르는 것입니다. 사전 조사에서 11.5%였던 창작 진입 장벽이 낮아진 이유가 여기에 있다고 봅니다.</p>
   <div class="strip"><figure><a class="zoom" href="img/main/r-0016.jpg"><img src="img/main/r-0016.jpg" width="1288" height="952" loading="lazy" decoding="async" alt="프롬프트 4단계 가사 초안 설계"></a><figcaption>프롬프트 4단계 가사 초안 설계</figcaption></figure><figure><a class="zoom" href="img/main/r-0017.jpg"><img src="img/main/r-0017.jpg" width="720" height="540" loading="lazy" decoding="async" alt="리릭 비디오 자막 싱크 보정"></a><figcaption>리릭 비디오 자막 싱크 보정</figcaption></figure><figure><a class="zoom" href="img/main/r-0018.jpg"><img src="img/main/r-0018.jpg" width="1600" height="901" loading="lazy" decoding="async" alt="트랜지션 설정 편집"></a><figcaption>트랜지션 설정 편집</figcaption></figure></div>
 
+  <h2 class="bh"><small>ME 프로젝트 우수작품</small>학생이 쓰고 만든 노래, 그림과 함께</h2>
+  <p class="lede">학생이 직접 작사·작곡한 창작곡을 그림과 함께 엮은 우수작품 모음입니다. 4분 10초 분량이며, 재생 버튼을 누르면 영상을 불러옵니다.</p>
+  <div class="vid"><video class="mv" controls preload="none" playsinline poster="https://edunity21.github.io/archive/poster_me.jpg" src="https://edunity21.github.io/archive/me_project.mp4">이 브라우저에서는 영상을 재생할 수 없습니다.</video></div>
+  <p class="note"><a href="https://edunity21.github.io/archive/#me" target="_blank" rel="noopener">단위학교 아카이브에서 보기</a></p>
+
   <h2 class="bh"><small>단일 파일 리릭 비디오</small>파일 세 개면 뮤직비디오가 된다</h2>
-  <p class="lede">영상 편집 프로그램을 다루지 못해도 뮤직비디오를 완성할 수 있도록 플레이어를 직접 만들었습니다. 아래에서 그 구조를 소리 없이 체험해 볼 수 있습니다. 재생하면 오른쪽 싱크 데이터의 현재 줄이 함께 움직입니다.</p>
+  <p class="lede">영상 편집 프로그램을 다루지 못해도 뮤직비디오를 완성할 수 있도록 플레이어를 직접 만들었습니다. 이 플레이어로 만든 학교 창작곡 「승평의 아침」을 들어 보세요. 가사가 노래에 맞춰 흐릅니다.</p>
+  <div class="player"><button class="ifr-lite" type="button" data-src="https://edunity21.github.io/spmorning/player2" data-title="「승평의 아침」 리릭 비디오 플레이어"><span class="pl"></span><span class="tt"><b>「승평의 아침」</b>학교 창작곡 리릭 비디오 플레이어를 불러옵니다</span></button></div>
+  <p class="note"><a href="https://edunity21.github.io/spmorning/player2" target="_blank" rel="noopener">새 창에서 열기</a>. 파일이 커서 처음 불러올 때 시간이 조금 걸릴 수 있습니다.</p>
+  <h3 class="bh" style="font-size:1.1rem;margin-top:2.4rem">구조를 소리 없이 들여다보기</h3>
+  <p class="lede">아래 예시에서 재생을 누르면 장면이 바뀌면서 오른쪽 싱크 데이터의 현재 줄이 함께 움직입니다.</p>
   <div class="lyric" id="lyric">
     <div><div class="lv"><img src="img/main/r-0019.jpg" width="720" height="540" loading="lazy" decoding="async" alt="가방 메고 문을 나서"><img src="img/main/r-001a.jpg" width="720" height="540" loading="lazy" decoding="async" alt="웃음도 눈물도 모두 담아서"><img src="img/main/r-001b.jpg" width="720" height="540" loading="lazy" decoding="async" alt="내 꿈은 조금 더 가까워져"><img src="img/main/r-001c.jpg" width="720" height="540" loading="lazy" decoding="async" alt="조금씩 더 커져 가는 나"></div>
       <div class="lctl"><button type="button" id="lplay">재생</button><div class="ltrack" id="ltrack"><div class="fill"></div></div><span class="tm" id="ltime">0.0초</span></div>
@@ -1117,7 +1135,7 @@ h1,h2,h3,.bh,.bigq{text-wrap:balance}
   function route(){
     var k=(location.hash||'#home').slice(1).split('/')[0];
     var v=$('#v-'+k); if(!v){k='home';v=$('#v-home');}
-    views.forEach(function(x){x.classList.toggle('on',x===v)});
+    views.forEach(function(x){ if(x!==v && x.classList.contains('on')) stopMedia(x); x.classList.toggle('on',x===v)});
     tiles.forEach(function(t){var on=t.dataset.r===k; t.classList.toggle('on',on); if(on) t.setAttribute('aria-current','page'); else t.removeAttribute('aria-current');});
     var on=tiles.filter(function(t){return t.classList.contains('on')})[0];
     if(on&&on.scrollIntoView&&window.innerWidth<=860) on.scrollIntoView({inline:'center',block:'nearest'});
@@ -1164,12 +1182,20 @@ h1,h2,h3,.bh,.bigq{text-wrap:balance}
 
   /* ---------- youtube lite ---------- */
   document.addEventListener('click',function(e){
-    var b=e.target.closest('button.yt'); if(!b) return;
-    var f=document.createElement('iframe'); f.className='ytf'; f.title=b.dataset.title||'YouTube 영상';
-    f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';
-    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'; f.allowFullscreen=true;
+    var b=e.target.closest('button.yt,button.ifr-lite'); if(!b) return;
+    var f=document.createElement('iframe'); f.title=b.dataset.title||'영상';
+    if(b.classList.contains('yt')){
+      f.className='ytf'; f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';
+      f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    } else { f.className='pf'; f.src=b.dataset.src; f.allow='autoplay; fullscreen'; }
+    f.allowFullscreen=true; f.dataset.orig=b.outerHTML;
     b.replaceWith(f);
   });
+  // stop media in views that are being hidden
+  function stopMedia(v){
+    $$('video',v).forEach(function(x){ if(!x.paused) x.pause(); });
+    $$('iframe[data-orig]',v).forEach(function(f){ var t=document.createElement('div'); t.innerHTML=f.dataset.orig; f.replaceWith(t.firstChild); });
+  }
 
   /* ---------- QR flip ---------- */
   document.addEventListener('click',function(e){
