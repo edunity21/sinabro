@@ -753,28 +753,32 @@ video.mv{width:100%;border-radius:.45rem;background:#000;display:block;aspect-ra
   <p class="prose" style="margin-top:1.4rem">이 경로 어디에도 악보를 읽거나 악기를 다루는 관문이 없습니다. 학생이 하는 일은 자기 이야기를 문장으로 쓰고, 그 문장이 어떤 소리가 되어야 하는지 정하고, 나온 결과를 듣고 고르는 것입니다. 사전 조사에서 11.5%였던 창작 진입 장벽이 낮아진 이유가 여기에 있다고 봅니다.</p>
   <div class="strip"><figure><a class="zoom" href="img/main/r-0016.jpg"><img src="img/main/r-0016.jpg" width="1288" height="952" loading="lazy" decoding="async" alt="프롬프트 4단계 가사 초안 설계"></a><figcaption>프롬프트 4단계 가사 초안 설계</figcaption></figure><figure><a class="zoom" href="img/main/r-0017.jpg"><img src="img/main/r-0017.jpg" width="720" height="540" loading="lazy" decoding="async" alt="리릭 비디오 자막 싱크 보정"></a><figcaption>리릭 비디오 자막 싱크 보정</figcaption></figure><figure><a class="zoom" href="img/main/r-0018.jpg"><img src="img/main/r-0018.jpg" width="1600" height="901" loading="lazy" decoding="async" alt="트랜지션 설정 편집"></a><figcaption>트랜지션 설정 편집</figcaption></figure></div>
 
-  <h2 class="bh"><small>ME 프로젝트 우수작품</small>학생이 쓰고 만든 노래, 그림과 함께</h2>
-  <p class="lede">학생이 직접 작사·작곡한 창작곡을 그림과 함께 엮은 우수작품 모음입니다. 4분 10초 분량이며, 재생 버튼을 누르면 영상을 불러옵니다.</p>
-  <div class="vid"><video class="mv" controls preload="none" playsinline poster="https://edunity21.github.io/archive/poster_me.jpg" src="https://edunity21.github.io/archive/me_project.mp4">이 브라우저에서는 영상을 재생할 수 없습니다.</video></div>
-  <p class="note"><a href="https://edunity21.github.io/archive/#me" target="_blank" rel="noopener">단위학교 아카이브에서 보기</a></p>
-
-  <h2 class="bh"><small>단일 파일 리릭 비디오</small>파일 세 개면 뮤직비디오가 된다</h2>
-  <p class="lede">영상 편집 프로그램을 다루지 못해도 뮤직비디오를 완성할 수 있도록 플레이어를 직접 만들었습니다. 이 플레이어로 만든 학교 창작곡 「승평의 아침」을 들어 보세요. 가사가 노래에 맞춰 흐릅니다.</p>
-  <div class="player"><button class="ifr-lite" type="button" data-src="https://edunity21.github.io/spmorning/player2" data-title="「승평의 아침」 리릭 비디오 플레이어"><span class="pl"></span><span class="tt"><b>「승평의 아침」</b>학교 창작곡 리릭 비디오 플레이어를 불러옵니다</span></button></div>
-  <p class="note"><a href="https://edunity21.github.io/spmorning/player2" target="_blank" rel="noopener">새 창에서 열기</a>. 파일이 커서 처음 불러올 때 시간이 조금 걸릴 수 있습니다.</p>
-  <h3 class="bh" style="font-size:1.1rem;margin-top:2.4rem">구조를 소리 없이 들여다보기</h3>
-  <p class="lede">아래 예시에서 재생을 누르면 장면이 바뀌면서 오른쪽 싱크 데이터의 현재 줄이 함께 움직입니다.</p>
+  <h2 class="bh"><small>리릭 비디오의 구조</small>구조를 소리 없이 들여다보기</h2>
+  <p class="lede">가사 한 줄과 등장 시각, 그 줄에 붙일 이미지 한 장이 맞물려 리릭 비디오가 됩니다. 재생을 누르면 장면이 바뀌면서 오른쪽 싱크 데이터의 현재 줄이 함께 움직입니다.</p>
   <div class="lyric" id="lyric">
     <div><div class="lv"><img src="img/main/r-0019.jpg" width="720" height="540" loading="lazy" decoding="async" alt="가방 메고 문을 나서"><img src="img/main/r-001a.jpg" width="720" height="540" loading="lazy" decoding="async" alt="웃음도 눈물도 모두 담아서"><img src="img/main/r-001b.jpg" width="720" height="540" loading="lazy" decoding="async" alt="내 꿈은 조금 더 가까워져"><img src="img/main/r-001c.jpg" width="720" height="540" loading="lazy" decoding="async" alt="조금씩 더 커져 가는 나"></div>
       <div class="lctl"><button type="button" id="lplay">재생</button><div class="ltrack" id="ltrack"><div class="fill"></div></div><span class="tm" id="ltime">0.0초</span></div>
       <p class="note" style="margin-top:.4rem">시간 값은 구조를 보여 주기 위한 예시입니다.</p></div>
     <pre class="json" id="ljson" aria-label="가사 싱크 데이터 예시"></pre>
   </div>
+
+  <h2 class="bh"><small>ME 프로젝트 우수작품</small>학생이 쓰고 만든 노래, 그림과 함께</h2>
+  <p class="lede">학생이 직접 작사·작곡한 창작곡을 그림과 함께 엮은 우수작품 모음입니다. 4분 10초 분량이며, 재생 버튼을 누르면 영상을 불러옵니다.</p>
+  <div class="vid"><video class="mv" controls preload="none" playsinline poster="https://edunity21.github.io/archive/poster_me.jpg" src="https://edunity21.github.io/archive/me_project.mp4">이 브라우저에서는 영상을 재생할 수 없습니다.</video></div>
+  <p class="note"><a href="https://edunity21.github.io/archive/#me" target="_blank" rel="noopener">단위학교 아카이브에서 보기</a></p>
+
+  <h2 class="bh"><small>가사 싱크 데이터</small>파일 세 개면 뮤직비디오가 된다</h2>
+  <p class="lede">영상 편집 프로그램을 다루지 못해도 뮤직비디오를 완성할 수 있도록, 학생은 아래 세 가지만 만듭니다.</p>
   <div class="three">
     <div><b>① 가사 싱크 데이터</b><p>가사 한 줄 + 등장 시각(초) + 그 줄에 붙일 이미지</p><p class="w">초 단위로 직접 맞추는 동안 곡 구조를 다시 듣게 됩니다. 숨은 감상 활동입니다.</p></div>
     <div><b>② 이미지 세트</b><p>가사 줄 수만큼의 장면 이미지 (예: 「맛있는 질서송」 18장)</p><p class="w">가사 한 줄을 시각 언어로 옮기는 훈련이라 미술·국어와 자연스럽게 이어집니다.</p></div>
     <div><b>③ 단일 파일 HTML</b><p>음원·가사·이미지를 브라우저에서 동기 재생하는 파일 1개</p><p class="w">설치도 계정도 필요 없습니다. QR 하나로 급식실·복도·가정에서 바로 재생됩니다.</p></div>
   </div>
+
+  <h2 class="bh"><small>단일 파일 리릭 비디오</small>직접 만든 플레이어로 듣는 「승평의 아침」</h2>
+  <p class="lede">세 파일을 하나의 HTML로 묶어 재생하는 플레이어를 직접 만들었습니다. 이 플레이어로 만든 학교 창작곡 「승평의 아침」을 들어 보세요. 가사가 노래에 맞춰 흐릅니다.</p>
+  <div class="player"><button class="ifr-lite" type="button" data-src="https://edunity21.github.io/spmorning/player2" data-title="「승평의 아침」 리릭 비디오 플레이어"><span class="pl"></span><span class="tt"><b>「승평의 아침」</b>학교 창작곡 리릭 비디오 플레이어를 불러옵니다</span></button></div>
+  <p class="note"><a href="https://edunity21.github.io/spmorning/player2" target="_blank" rel="noopener">새 창에서 열기</a>. 파일이 커서 처음 불러올 때 시간이 조금 걸릴 수 있습니다.</p>
   <p class="prose" style="margin-top:1.4rem">학생 작품을 공유할 때마다 상용 영상 플랫폼이 요구하는 계정·개인정보·저작권 부담과 학교 방화벽 문제가 반복됐습니다. 파일 하나를 QR로 배포하면 설치와 계정 없이 어떤 기기에서든 재생됩니다.</p>
   <div class="strip"><figure><a class="zoom" href="img/main/r-0045.jpg"><img src="img/main/r-0045.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="리릭 비디오 플레이어 화면"></a><figcaption>리릭 비디오 플레이어 화면</figcaption></figure><figure><a class="zoom" href="img/main/r-0046.jpg"><img src="img/main/r-0046.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="리릭 비디오 플레이어 화면"></a><figcaption>리릭 비디오 플레이어 화면</figcaption></figure><figure><a class="zoom" href="img/main/r-0047.jpg"><img src="img/main/r-0047.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="리릭 비디오 플레이어 화면"></a><figcaption>리릭 비디오 플레이어 화면</figcaption></figure></div>
   <nav class="pn"><a href="#si"><span>이전</span><b>詩 시의 품에 안기다</b></a><a href="#beu"><span>다음</span><b>브 브레인 AI와 협력하다</b></a></nav>
